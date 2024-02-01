@@ -1,14 +1,653 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        font-size: 16px;
+        color: #242424;
+      }
+      .container {
+        width: 1300px;
+        margin: 0px auto;
+      }
+
+      /****************HEADER SECTION****************/
+      .header {
+        background: #0055a4;
+        padding: 6px;
+      }
+
+      .header b {
+        background: #fff;
+        color: red;
+        padding: 10px;
+        font-size: 20px;
+      }
+
+      .header marquee {
+        font-size: 20px;
+        color: #ffffff;
+        width: 80%;
+      }
+
+      /**********LOGO SECTION**********/
+      .logo {
+        height: 65px;
+      }
+
+      /**********MENU SECTION**********/
+      nav {
+        float: right;
+        padding: 25px 0px;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 2px 10px;
+        font-weight: 500;
+      }
+
+      /*****SLIDER SECTION*****/
+      .slider img {
+        width: 100%;
+      }
+      /****************EVENT SECTION*************/
+      .main-section {
+        width: 100%;
+        float: left;
+        padding: 100px 0px 100px 0px;
+      }
+
+      .event {
+        width: 32%;
+        margin-right: 1%;
+        float: left;
+        background-color: #fff;
+      }
+
+      .event i {
+        color: red;
+        font-size: 14px;
+      }
+
+      .event div {
+        padding: 10px;
+      }
+
+      .event .heading {
+        padding: 10px;
+        color: #fff;
+        background: #0055a4;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+
+      .event ul li {
+        margin-bottom: 20px;
+        width: 100%;
+        float: left;
+        list-style: none;
+      }
+
+      .event-date {
+        background: red;
+        float: left;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        padding: 8px 12px;
+        margin-right: 10px;
+      }
+
+      /*******CAMPUS NEWS SECTION***********/
+      .campus-news span {
+        width: 80px;
+        float: left;
+      }
+
+      .campus-news h2 {
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .campus-news h6 {
+        font-weight: 500;
+        font-size: 13px;
+        color: red;
+      }
+
+      .campus-news p {
+        font-size: 14px;
+      }
+
+      /****************ABOUT US SECTION****************/
+      .heading {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        color: #0055a4;
+      }
+
+      .subhead {
+        font-size: 18px;
+        color: red;
+        font-weight: 500;
+      }
+
+      .about-us div {
+        width: 45%;
+        float: left;
+        line-height: 30px;
+        font-size: 18px;
+      }
+
+      .about-us h4 {
+        font-size: 18px;
+        color: red;
+        font-weight: 500;
+      }
+
+      .about-us p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding-right: 30px;
+        line-height: 23px;
+      }
+
+      .about-us img {
+        width: 40%;
+        float: left;
+      }
+
+      /****************AWARD SECTION****************/
+      .award p {
+        width: 100%;
+        float: left;
+        font-size: 16px;
+      }
+
+      .award img {
+        width: 100%;
+      }
+
+      .award b {
+        min-width: 115px;
+        float: left;
+        margin-bottom: 20px;
+      }
+
+      .award h3 {
+        font-size: 23px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /****************CHAIRMAN SECTION****************/
+      .chairman img {
+        width: 150px;
+        float: left;
+        margin-right: 10px;
+      }
+
+      .chairman h2 {
+        font-size: 22px;
+        margin-top: 30px;
+      }
+
+      .chairman h4 {
+        font-size: 16px;
+        color: red;
+        font-weight: 400;
+      }
+
+      /****************TESTIMONIAL SECTION****************/
+      .testimonial {
+        width: 30.5%;
+        float: left;
+        margin-right: 2.5%;
+      }
+
+      .testimonial-text {
+        background: #0055a40f;
+        padding: 20px;
+        line-height: 35px;
+        border-radius: 10px;
+        font-size: 18px;
+        text-align: center;
+        border: 1px solid #0055a4;
+      }
+
+      .testimonial-detail {
+        float: left;
+        margin-top: 10px;
+      }
+
+      .testimonial-img {
+        float: left;
+      }
+
+      .testimonial-name {
+        margin-left: 10px;
+        float: left;
+      }
+
+      .testimonial-name h5 {
+        font-size: 18px;
+        margin-top: 8px;
+      }
+      /****************FOOTER SECTION****************/
+      .footer {
+        background-color: #f0f3fa;
+        padding: 40px 0px;
+        width: 100%;
+        float: left;
+      }
+
+      .footer-logo {
+        height: 70px;
+        width: auto;
+      }
+
+      .footer-sect {
+        width: 100%;
+        float: left;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
+      }
+
+      .footer-sect a {
+        color: #202020;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hell World</h1>
-    <h1>Hell World</h1>
-    <h1>Hell World</h1>
-    <h1>Hell World</h1>
+    <div class="header">
+      <div class="container">
+        <b> ABOUT : </b>
+        <marquee>
+          Cybrom Technology Pvt. Ltd. is one of the pioneers in skill-based
+          training and job-oriented upskilling. We also help the youth of the
+          country become employable; we make them employable after upskilling by
+          our campus placements.
+        </marquee>
+      </div>
+    </div>
+
+    <div class="container">
+      <!---LOGO SECTION ----->
+      <img src="{% static '/images/logo.png' %}" class="logo" />
+      <!----MENU SECTION----->
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About us</a>
+        <a href="#">Events</a>
+        <a href="#">Gallery</a>
+        <a href="#">Notice Board</a>
+        <a href="#">Contact us</a>
+      </nav>
+    </div>
+
+    <!-----SLIDER SECTION----->
+    <div class="slider">
+      <img src="images/slider.jpg" />
+    </div>
+    <!----END SLIDER SECTION----->
+    <div class="main-section" style="background: #f0f3fa">
+      <div class="container">
+        <!----CAMPUS NEWS SECTION----->
+        <div class="event">
+          <h2 class="heading">Recent Event</h2>
+          <div>
+            <marquee direction="up" scrollamount="7" style="height: 340px">
+              <ul>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus...
+                  <img src="images/new.gif" />
+                </li>
+              </ul>
+            </marquee>
+          </div>
+        </div>
+        <!-----CAMPUS NEWS SECTION----->
+        <div class="event campus-news">
+          <h2 class="heading">Campus News</h2>
+          <div>
+            <ul>
+              <li>
+                <span class="campus-img">
+                  <img src="images/campus-1.png" />
+                </span>
+                <h2>There are many variations.</h2>
+                <h6>Sep.04.2012</h6>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry...
+                </p>
+              </li>
+              <li>
+                <span class="event-img">
+                  <img src="images/campus-2.png" />
+                </span>
+                <h2>There are many variations.</h2>
+                <h6>Sep.04.2012</h6>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry...
+                </p>
+              </li>
+              <li>
+                <span class="event-img">
+                  <img src="images/campus-3.png" />
+                </span>
+                <h2>There are many variations.</h2>
+                <h6>Sep.04.2012</h6>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry...
+                </p>
+              </li>
+              <li>
+                <span class="event-img">
+                  <img src="images/campus-4.png" />
+                </span>
+                <h2>There are many variations.</h2>
+                <h6>Sep.04.2012</h6>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry...
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!------EVENT SECTION------>
+        <div class="event">
+          <h2 class="heading">College Event Calender</h2>
+          <div>
+            <ul>
+              <li>
+                <span class="event-date"
+                  >11 <br />
+                  April
+                </span>
+                Lorem Ipsum is simply dummy text of the printing text printing
+                industry...
+              </li>
+              <li>
+                <span class="event-date"
+                  >19 <br />
+                  May
+                </span>
+                Lorem Ipsum is simply dummy text of the printing industry dummy
+                text...
+              </li>
+              <li>
+                <span class="event-date"
+                  >21 <br />
+                  June
+                </span>
+                Lorem Ipsum is simply dummy text of the printing industry orem
+                Ipsum...
+              </li>
+              <li>
+                <span class="event-date"
+                  >17 <br />
+                  July
+                </span>
+                Lorem Ipsum is simply dummy text of the printing industry simply
+                dummy...
+              </li>
+              <li>
+                <span class="event-date"
+                  >31 <br />
+                  Marc
+                </span>
+                Lorem Ipsum is simply dummy text of the printing industry...
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-----ABOUT US SECTION------>
+    <div class="main-section">
+      <div class="container about-us">
+        <div>
+          <h4 class="subhead">Our Institue</h4>
+          <h2 class="heading">About My College</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut elit
+            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.If you
+            are going to use a passage.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.If you
+            are going to use a passage of anything embarrassing hidden in the
+            middle of text Lorem ipsum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus.If you are going to use a passage of a Lorem ipsum
+          </p>
+          <a href="#">Read More</a>
+        </div>
+        <img src="images/about-us.jpg" />
+      </div>
+    </div>
+    <div class="main-section award" style="background: #f0f3fa">
+      <div class="container">
+        <!-----College INFO SECTION----->
+        <div class="event">
+          <h2 class="heading">Our Chairman</h2>
+          <div class="chairman">
+            <ul>
+              <li>
+                <span class="campus-img">
+                  <img src="images/owner-1.png" />
+                </span>
+                <h2>Dr. Jay sharma</h2>
+                <h4>Chairman, My College</h4>
+                <h5>2010-2023</h5>
+              </li>
+              <li>
+                <span class="campus-img">
+                  <img src="images/owner-2.png" />
+                </span>
+                <h2>Dr. Jay sharma</h2>
+                <h4>Principal, My College</h4>
+                <h5>2020-2023</h5>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-----College AWARD SECTION----->
+        <div class="event">
+          <h2 class="heading">Our College Awards</h2>
+          <div>
+            <img src="images/award.jpg" />
+          </div>
+        </div>
+        <!-----College CERTIFICATE SECTION----->
+        <div class="event">
+          <h2 class="heading">My College Certificate</h2>
+          <div>
+            <img src="images/certificate.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-----TESTIMONIAL SECTION------>
+    <div class="main-section">
+      <div class="container">
+        <h4 class="subhead">Testimonial</h4>
+        <h2 class="heading">What Parents Say About Our College</h2>
+        <div class="testimonial">
+          <div class="testimonial-text">
+            <p>
+              <img src="images/quote.png" />
+            </p>
+            Contrary to popular belief, Lorem Ipsum is not simply. It has roots
+            in a piece of classical Latin literature from 45 BC, making it over
+            2000 years old. Richard, a Latin professor at Hampden-Sydney
+            College.
+          </div>
+          <div class="testimonial-detail">
+            <div class="testimonial-img">
+              <img src="images/testimonial-1.png" />
+            </div>
+            <div class="testimonial-name">
+              <h5>Kiya</h5>
+              <p>
+                <img src="images/rating.png" />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-text">
+            <p>
+              <img src="images/quote.png" />
+            </p>
+            Contrary to popular belief, Lorem Ipsum is not simply. It has roots
+            in a piece of classical Latin literature from 45 BC, making it over
+            2000 years old. Richard, a Latin professor at Hampden-Sydney
+            College.
+          </div>
+          <div class="testimonial-detail">
+            <div class="testimonial-img">
+              <img src="images/testimonial-2.png" />
+            </div>
+            <div class="testimonial-name">
+              <h5>Divya</h5>
+              <p>
+                <img src="images/rating.png" />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-text">
+            <p>
+              <img src="images/quote.png" />
+            </p>
+            Contrary to popular belief, Lorem Ipsum is not simply. It has roots
+            in a piece of classical Latin literature from 45 BC, making it over
+            2000 years old. Richard, a Latin professor at Hampden-Sydney
+            College.
+          </div>
+          <div class="testimonial-detail">
+            <div class="testimonial-img">
+              <img src="images/testimonial-3.png" />
+            </div>
+            <div class="testimonial-name">
+              <h5>Richa</h5>
+              <p>
+                <img src="images/rating.png" />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!---FOOTER SECTION--->
+
+    <div class="footer">
+      <div class="container">
+        <div class="footer-sect">
+          <img class="footer-logo" src="images/logo.png" />
+        </div>
+        <div class="footer-sect">
+          <address>
+            186, 3rd floor, Business Building Ring Road, Near Google Mall,
+            <br />
+            Zone-II, Highway street, Bhopal, MP, 462011
+          </address>
+        </div>
+        <div class="footer-sect">
+          <img src="images/icon-tel.png" /> +91 - 9926 661 418
+        </div>
+        <div class="footer-sect">
+          <img src="images/icon-mail.png" /> info@dezven.com
+        </div>
+        <div class="footer-sect">
+          <img src="images/icon-fb.png" />
+          <img src="images/icon-tw.png" />
+          <img src="images/icon-in.png" />
+          <img src="images/icon-li.png" />
+        </div>
+        <div class="footer-sect">
+          <a href="#"> Home</a>
+          <a href="#"> About us</a>
+          <a href="#"> Tutorial</a>
+          <a href="#"> Event</a>
+          <a href="#"> Gallery</a>
+          <a href="#"> Press Release</a>
+          <a href="#"> Courses</a>
+          <a href="#"> Contact Us</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
