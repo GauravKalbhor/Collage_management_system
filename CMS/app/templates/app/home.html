@@ -133,6 +133,10 @@
       .campus-news p {
         font-size: 14px;
       }
+      .event-img img {
+        width: 70px;
+        height: 70px;
+      }
 
       /****************ABOUT US SECTION****************/
       .heading {
@@ -169,7 +173,7 @@
       }
 
       .about-us img {
-        width: 40%;
+        width: 50%;
         float: left;
       }
 
@@ -214,41 +218,6 @@
         font-weight: 400;
       }
 
-      /****************TESTIMONIAL SECTION****************/
-      .testimonial {
-        width: 30.5%;
-        float: left;
-        margin-right: 2.5%;
-      }
-
-      .testimonial-text {
-        background: #0055a40f;
-        padding: 20px;
-        line-height: 35px;
-        border-radius: 10px;
-        font-size: 18px;
-        text-align: center;
-        border: 1px solid #0055a4;
-      }
-
-      .testimonial-detail {
-        float: left;
-        margin-top: 10px;
-      }
-
-      .testimonial-img {
-        float: left;
-      }
-
-      .testimonial-name {
-        margin-left: 10px;
-        float: left;
-      }
-
-      .testimonial-name h5 {
-        font-size: 18px;
-        margin-top: 8px;
-      }
       /****************FOOTER SECTION****************/
       .footer {
         background-color: #f0f3fa;
@@ -306,7 +275,7 @@
 
     <!-----SLIDER SECTION----->
     <div class="slider">
-      <img src="{% static '/images/cybrom-technology.jpg' %}" alt=""/>
+      <img src="{% static '/images/main_image.jpg' %}" alt="" />
     </div>
     <!----END SLIDER SECTION----->
     <div class="main-section" style="background: #f0f3fa">
@@ -320,47 +289,47 @@
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-                  <img src="images/new.gif" />
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
               </ul>
             </marquee>
@@ -372,8 +341,8 @@
           <div>
             <ul>
               <li>
-                <span class="campus-img">
-                  <img src="images/campus-1.png" />
+                <span class="event-img">
+                  <img src="{% static '/images/campus_news_1.jfif' %} " />
                 </span>
                 <h2>There are many variations.</h2>
                 <h6>Sep.04.2012</h6>
@@ -384,7 +353,7 @@
               </li>
               <li>
                 <span class="event-img">
-                  <img src="images/campus-2.png" />
+                  <img src="{% static '/images/campus_news_2.jfif' %} " />
                 </span>
                 <h2>There are many variations.</h2>
                 <h6>Sep.04.2012</h6>
@@ -395,7 +364,7 @@
               </li>
               <li>
                 <span class="event-img">
-                  <img src="images/campus-3.png" />
+                  <img src="{% static '/images/campus_news_3.jfif' %} " />
                 </span>
                 <h2>There are many variations.</h2>
                 <h6>Sep.04.2012</h6>
@@ -406,7 +375,7 @@
               </li>
               <li>
                 <span class="event-img">
-                  <img src="images/campus-4.png" />
+                  <img src="{% static '/images/campus_news_4.jfif' %} " />
                 </span>
                 <h2>There are many variations.</h2>
                 <h6>Sep.04.2012</h6>
@@ -491,7 +460,7 @@
           </p>
           <a href="#">Read More</a>
         </div>
-        <img src="images/about-us.jpg" />
+        <img src="{% static '/images/About_us.avif' %} " />
       </div>
     </div>
     <div class="main-section award" style="background: #f0f3fa">
@@ -503,7 +472,7 @@
             <ul>
               <li>
                 <span class="campus-img">
-                  <img src="images/owner-1.png" />
+                  <img src="{% static '/images/owner-1.jfif' %} " />
                 </span>
                 <h2>Dr. Jay sharma</h2>
                 <h4>Chairman, My College</h4>
@@ -511,7 +480,7 @@
               </li>
               <li>
                 <span class="campus-img">
-                  <img src="images/owner-2.png" />
+                  <img src="{% static '/images/owner-2.jpg' %} " />
                 </span>
                 <h2>Dr. Jay sharma</h2>
                 <h4>Principal, My College</h4>
@@ -522,92 +491,29 @@
         </div>
         <!-----College AWARD SECTION----->
         <div class="event">
-          <h2 class="heading">Our College Awards</h2>
+          <h2 class="heading">Placements</h2>
           <div>
-            <img src="images/award.jpg" />
+            <img src="{% static '/images/placement.JPG' %} " />
           </div>
         </div>
         <!-----College CERTIFICATE SECTION----->
         <div class="event">
           <h2 class="heading">My College Certificate</h2>
           <div>
-            <img src="images/certificate.png" />
+            <img src="{% static '/images/placement2.JPG' %} " />
           </div>
         </div>
       </div>
     </div>
 
-    <!-----TESTIMONIAL SECTION------>
+    <!-------PLACEMENT SECTION ------->
     <div class="main-section">
       <div class="container">
-        <h4 class="subhead">Testimonial</h4>
-        <h2 class="heading">What Parents Say About Our College</h2>
-        <div class="testimonial">
-          <div class="testimonial-text">
-            <p>
-              <img src="images/quote.png" />
-            </p>
-            Contrary to popular belief, Lorem Ipsum is not simply. It has roots
-            in a piece of classical Latin literature from 45 BC, making it over
-            2000 years old. Richard, a Latin professor at Hampden-Sydney
-            College.
-          </div>
-          <div class="testimonial-detail">
-            <div class="testimonial-img">
-              <img src="images/testimonial-1.png" />
-            </div>
-            <div class="testimonial-name">
-              <h5>Kiya</h5>
-              <p>
-                <img src="images/rating.png" />
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-text">
-            <p>
-              <img src="images/quote.png" />
-            </p>
-            Contrary to popular belief, Lorem Ipsum is not simply. It has roots
-            in a piece of classical Latin literature from 45 BC, making it over
-            2000 years old. Richard, a Latin professor at Hampden-Sydney
-            College.
-          </div>
-          <div class="testimonial-detail">
-            <div class="testimonial-img">
-              <img src="images/testimonial-2.png" />
-            </div>
-            <div class="testimonial-name">
-              <h5>Divya</h5>
-              <p>
-                <img src="images/rating.png" />
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-text">
-            <p>
-              <img src="images/quote.png" />
-            </p>
-            Contrary to popular belief, Lorem Ipsum is not simply. It has roots
-            in a piece of classical Latin literature from 45 BC, making it over
-            2000 years old. Richard, a Latin professor at Hampden-Sydney
-            College.
-          </div>
-          <div class="testimonial-detail">
-            <div class="testimonial-img">
-              <img src="images/testimonial-3.png" />
-            </div>
-            <div class="testimonial-name">
-              <h5>Richa</h5>
-              <p>
-                <img src="images/rating.png" />
-              </p>
-            </div>
-          </div>
-        </div>
+        <h4 class="subhead">Top Placement</h4>
+        <h2 class="heading">Our Partner Company</h2>
+        <marquee class="placement" direction="left" scrollamount="10">
+          <img src="{% static '/images/Company.JPG' %} " />
+        </marquee>
       </div>
     </div>
 
@@ -616,7 +522,7 @@
     <div class="footer">
       <div class="container">
         <div class="footer-sect">
-          <img class="footer-logo" src="images/logo.png" />
+          <img class="footer-logo" src="{% static '/images/logo.png' %} " />
         </div>
         <div class="footer-sect">
           <address>
@@ -626,26 +532,16 @@
           </address>
         </div>
         <div class="footer-sect">
-          <img src="images/icon-tel.png" /> +91 - 9926 661 418
+          <img src="{% static '/images/icon-tel.png' %} " /> +91 - 9926 661 418
         </div>
         <div class="footer-sect">
-          <img src="images/icon-mail.png" /> info@dezven.com
+          <img src="{% static '/images/icon-mail.png' %} " /> info@dezven.com
         </div>
         <div class="footer-sect">
-          <img src="images/icon-fb.png" />
-          <img src="images/icon-tw.png" />
-          <img src="images/icon-in.png" />
-          <img src="images/icon-li.png" />
-        </div>
-        <div class="footer-sect">
-          <a href="#"> Home</a>
-          <a href="#"> About us</a>
-          <a href="#"> Tutorial</a>
-          <a href="#"> Event</a>
-          <a href="#"> Gallery</a>
-          <a href="#"> Press Release</a>
-          <a href="#"> Courses</a>
-          <a href="#"> Contact Us</a>
+          <img src="{% static '/images/icon-fb.png' %} " />
+          <img src="{% static '/images/icon-tw.png' %} " />
+          <img src="{% static '/images/icon-in.png' %} " />
+          <img src="{% static '/images/icon-li.png' %} " />
         </div>
       </div>
     </div>
