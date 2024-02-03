@@ -18,7 +18,7 @@ def adminLogin(request):
             'password' : 'admin@1234'
         }
         if (admin_data['id'] == ad_ID and admin_data['password'] == ad_pass):
-            return render(request,'app/home.html')
+            return render(request,'admin/admin_dashboard.html')
         else:
             admin_form = Admin_form()
             return render(request,'admin/adminLogin.html',{'form':admin_form})
@@ -26,14 +26,26 @@ def adminLogin(request):
         admin_form = Admin_form()
         return render(request,'admin/adminLogin.html',{'form':admin_form})
     
-def student(request):
+def adminDashbord(request):
     if request.method == "POST":
         stu_data = Student_Form(request.POST)
         if stu_data.is_valid():
             stu_data.save()
             message = "Student details register successfully"
             stu_form = Student_Form()
-            return render(request,'admin/adminLogin.html',{'stu_form':stu_form,'msg':message})
+            return render(request,'admin/admin_dashboard.html',{'stu_form':stu_form,'msg':message})
     else:
         stu_form = Student_Form()
-    return render(request,'admin/adminLogin.html',{'stu_form':stu_form})
+    return render(request,'admin/admin_dashboard.html',{'stu_form':stu_form})
+
+# def student(request):
+#     if request.method == "POST":
+#         stu_data = Student_Form(request.POST)
+#         if stu_data.is_valid():
+#             stu_data.save()
+#             message = "Student details register successfully"
+#             stu_form = Student_Form()
+#             return render(request,'admin/adminLogin.html',{'stu_form':stu_form,'msg':message})
+#     else:
+#         stu_form = Student_Form()
+#     return render(request,'admin/adminLogin.html',{'stu_form':stu_form})

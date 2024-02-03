@@ -99,7 +99,13 @@
         <div>Total Course</div>
         <h1>12</h1>
       </div>
-      <div class="content8"></div>
+      <div class="content8">
+        <form action="" method="post" novalidate>
+          {% csrf_token %}
+          {{stu_form}}
+          <input type="submit" value="Submit Data">
+       </form>
+      </div>
       <div class="content9"></div>
     </section>
     <script>
