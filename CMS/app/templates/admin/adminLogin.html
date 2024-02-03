@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS Admin Login </title>
 </head>
@@ -13,5 +13,12 @@
         {{form}}
         <input type="submit" value="LOGIN">
     </form>
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{stu_form}}
+        <input type="submit" value="Submit Data">
+    </form>
+    
 </body>
 </html>
