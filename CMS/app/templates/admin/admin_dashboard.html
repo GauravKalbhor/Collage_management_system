@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{% static '/css/admin_dashboard.css' %}" />
+  </head>
+  <body>
+    <section>
+      <div class="content1">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">CYBROM</a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <form class="form-inline my-2 my-lg-0">
+              <div class="user-name">Prashant</div>
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                class="rounded-circle user-circle"
+                height="25"
+                alt="Black and White Portrait of a Man"
+                loading="lazy"
+              />
+              <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+                Logout
+              </button>
+            </form>
+          </div>
+        </nav>
+        <!-- Navbar -->
+      </div>
+      <div class="content2 sidenav">
+        <!-- <div class="sidenav"> -->
+        <a href="#about">Dashboard</a>
+
+        <button class="dropdown-btn">
+          Students
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">Student Add</a>
+          <a href="#">Student Update</a>
+        </div>
+        <button class="dropdown-btn">
+          Teacher
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">Teacher Add</a>
+          <a href="#">Teacher Update</a>
+        </div>
+        <button class="dropdown-btn">
+          Course
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">Course Add</a>
+          <a href="#">Course Update</a>
+        </div>
+        <a href="#contact">Graph</a>
+        <!-- </div> -->
+      </div>
+      <div class="content3">
+        <div aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Students</li>
+          </ol>
+        </div>
+      </div>
+      <div class="content4 content4-attendence">
+        <div>Students Attendence</div>
+        <h1>59%</h1>
+      </div>
+      <div class="content5 content4-attendence">
+        <div>Teacher Attendence</div>
+        <h1>59%</h1>
+      </div>
+      <div class="content6 content4-attendence">
+        <div>Fees Budget</div>
+        <h1>59000</h1>
+      </div>
+      <div class="content7 content4-attendence">
+        <div>Total Course</div>
+        <h1>12</h1>
+      </div>
+      <div class="content8"></div>
+      <div class="content9"></div>
+    </section>
+    <script>
+      /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
