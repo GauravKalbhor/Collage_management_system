@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="{% static '/css/home.css' %}">
-    
+    <link rel="stylesheet" href="{% static '/css/home.css' %}" />
   </head>
   <body>
     <div class="header">
@@ -21,7 +20,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="background-color: red;">
       <!---LOGO SECTION ----->
       <img src="{% static '/images/logo.png' %}" alt="logo" class="logo" />
       <!----MENU SECTION----->
@@ -47,7 +46,7 @@
         <div class="event">
           <h2 class="heading">Recent Event</h2>
           <div>
-            <marquee direction="up" scrollamount="7" style="height: 340px" >
+            <marquee direction="up" scrollamount="7" style="height: 340px">
               <ul>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
@@ -60,12 +59,6 @@
                   adipiscing elit. Ut elit tellus...
 
                   <img src="{% static '/images/new.gif' %} " />
-
-                </li>
-                <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
-                    <img src="{% static '/images/new.gif' %} " />
                 </li>
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
@@ -95,7 +88,12 @@
                 <li>
                   <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus...
-\                  <img src="{% static '/images/new.gif' %} " />
+                  <img src="{% static '/images/new.gif' %} " />
+                </li>
+                <li>
+                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Ut elit tellus... \
+                  <img src="{% static '/images/new.gif' %} " />
                 </li>
               </ul>
             </marquee>
@@ -153,7 +151,9 @@
             </ul>
           </div>
         </div>
+        {% comment %}
         <!------EVENT SECTION------>
+        {% endcomment %}
         <div class="event">
           <h2 class="heading">College Event Calender</h2>
           <div>
