@@ -17,6 +17,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="{% static '/css/admin_dashboard.css' %}" />
+    <style></style>
   </head>
   <body>
     <section>
@@ -53,7 +54,7 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="#">Student Add</a>
+          <a href="{% url 'student_add' %}">Student Add</a>
           <a href="#">Student Update</a>
         </div>
         <button class="dropdown-btn">
@@ -83,6 +84,7 @@
           </ol>
         </div>
       </div>
+
       <div class="content4 content4-attendence">
         <div>Students Attendence</div>
         <h1>59%</h1>
@@ -99,13 +101,13 @@
         <div>Total Course</div>
         <h1>12</h1>
       </div>
+      {% block content %}
       <div class="content8">
-        <form action="" method="post" novalidate>
-          {% csrf_token %}
-          {{stu_form}}
-          <input type="submit" value="Submit Data">
-       </form>
+        <center>
+          <h1>Inser Graph Process</h1>
+        </center>
       </div>
+      {% endblock %}
       <div class="content9"></div>
     </section>
     <script>
