@@ -5,246 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        font-size: 16px;
-        color: #242424;
-      }
-      .container {
-        width: 1300px;
-        margin: 0px auto;
-      }
-
-      /****************HEADER SECTION****************/
-      .header {
-        background: #0055a4;
-        padding: 6px;
-      }
-
-      .header b {
-        background: #fff;
-        color: red;
-        padding: 10px;
-        font-size: 20px;
-      }
-
-      .header marquee {
-        font-size: 20px;
-        color: #ffffff;
-        width: 80%;
-      }
-
-      /**********LOGO SECTION**********/
-      .logo {
-        height: 65px;
-      }
-
-      /**********MENU SECTION**********/
-      nav {
-        float: right;
-        padding: 25px 0px;
-      }
-
-      nav a {
-        color: black;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 2px 10px;
-        font-weight: 500;
-      }
-
-      /*****SLIDER SECTION*****/
-      .slider img {
-        width: 100%;
-      }
-      /****************EVENT SECTION*************/
-      .main-section {
-        width: 100%;
-        float: left;
-        padding: 100px 0px 100px 0px;
-      }
-
-      .event {
-        width: 32%;
-        margin-right: 1%;
-        float: left;
-        background-color: #fff;
-      }
-
-      .event i {
-        color: red;
-        font-size: 14px;
-      }
-
-      .event div {
-        padding: 10px;
-      }
-
-      .event .heading {
-        padding: 10px;
-        color: #fff;
-        background: #0055a4;
-        text-align: center;
-        font-size: 22px;
-        font-weight: 400;
-        margin-bottom: 10px;
-      }
-
-      .event ul li {
-        margin-bottom: 20px;
-        width: 100%;
-        float: left;
-        list-style: none;
-      }
-
-      .event-date {
-        background: red;
-        float: left;
-        text-align: center;
-        font-size: 14px;
-        color: #fff;
-        padding: 8px 12px;
-        margin-right: 10px;
-      }
-
-      /*******CAMPUS NEWS SECTION***********/
-      .campus-news span {
-        width: 80px;
-        float: left;
-      }
-
-      .campus-news h2 {
-        font-weight: 600;
-        font-size: 16px;
-      }
-
-      .campus-news h6 {
-        font-weight: 500;
-        font-size: 13px;
-        color: red;
-      }
-
-      .campus-news p {
-        font-size: 14px;
-      }
-      .event-img img {
-        width: 70px;
-        height: 70px;
-      }
-
-      /****************ABOUT US SECTION****************/
-      .heading {
-        font-size: 28px;
-        font-weight: 500;
-        margin-bottom: 30px;
-        color: #0055a4;
-      }
-
-      .subhead {
-        font-size: 18px;
-        color: red;
-        font-weight: 500;
-      }
-
-      .about-us div {
-        width: 45%;
-        float: left;
-        line-height: 30px;
-        font-size: 18px;
-      }
-
-      .about-us h4 {
-        font-size: 18px;
-        color: red;
-        font-weight: 500;
-      }
-
-      .about-us p {
-        font-size: 16px;
-        margin-bottom: 20px;
-        padding-right: 30px;
-        line-height: 23px;
-      }
-
-      .about-us img {
-        width: 50%;
-        float: left;
-      }
-
-      /****************AWARD SECTION****************/
-      .award p {
-        width: 100%;
-        float: left;
-        font-size: 16px;
-      }
-
-      .award img {
-        width: 100%;
-      }
-
-      .award b {
-        min-width: 115px;
-        float: left;
-        margin-bottom: 20px;
-      }
-
-      .award h3 {
-        font-size: 23px;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      /****************CHAIRMAN SECTION****************/
-      .chairman img {
-        width: 150px;
-        float: left;
-        margin-right: 10px;
-      }
-
-      .chairman h2 {
-        font-size: 22px;
-        margin-top: 30px;
-      }
-
-      .chairman h4 {
-        font-size: 16px;
-        color: red;
-        font-weight: 400;
-      }
-
-      /****************FOOTER SECTION****************/
-      .footer {
-        background-color: #f0f3fa;
-        padding: 40px 0px;
-        width: 100%;
-        float: left;
-      }
-
-      .footer-logo {
-        height: 70px;
-        width: auto;
-      }
-
-      .footer-sect {
-        width: 100%;
-        float: left;
-        text-align: center;
-        margin-top: 20px;
-        font-size: 16px;
-      }
-
-      .footer-sect a {
-        color: #202020;
-        margin-left: 10px;
-        text-decoration: none;
-      }
-    </style>
+    <link rel="stylesheet" href="{% static '/css/home.css' %}" />
   </head>
   <body>
     <div class="header">
@@ -260,9 +21,9 @@
     </div>
 
     <div class="container">
-      <!---LOGO SECTION ----->
+      <!---LOGO SECTION ---->
       <img src="{% static '/images/logo.png' %}" alt="logo" class="logo" />
-      <!----MENU SECTION----->
+      <!----MENU SECTION---->
       <nav>
         <a href="#">Home</a>
         <a href="#">About us</a>
@@ -270,69 +31,42 @@
         <a href="#">Gallery</a>
         <a href="#">Notice Board</a>
         <a href="#">Contact us</a>
+        <a href="{% url 'adminLogin' %}">Login</a>
       </nav>
     </div>
 
-    <!-----SLIDER SECTION----->
+    <!-----SLIDER SECTION---->
     <div class="slider">
       <img src="{% static '/images/main_image.jpg' %}" alt="" />
     </div>
-    <!----END SLIDER SECTION----->
+    <!----END SLIDER SECTION---->
     <div class="main-section" style="background: #f0f3fa">
       <div class="container">
-        <!----CAMPUS NEWS SECTION----->
+        <!----CAMPUS NEWS SECTION---->
         <div class="event">
           <h2 class="heading">Recent Event</h2>
           <div>
-            <marquee direction="up" scrollamount="7" style="height: 340px" >
+            <marquee direction="up" scrollamount="7" style="height: 340px">
               <ul>
                 <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
+                  <i>16-Feb-2024 :</i> INTERNSHIPS/ FRESHERS JOB OPPORTUNITY
 
-                  <img src="{% static '/images/new.gif' %} " />
+                  <img src="{% static '/images/new.gif' %}" alt="" />
                 </li>
                 <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
+                  <i>12-Feb-2024 :</i> Senior Big Data Python Software Engineer
 
+                  <img src="{% static '/images/new.gif' %}" alt="" />
+                </li>
+                <li>
+                  <i>10-Feb-2024 :</i> Design plugin development using C++Build
+                  Windows and Mac pluginsTrain
+                  <img src="{% static '/images/new.gif' %} " alt="" />
+                </li>
+                <li>
+                  <i>6-Feb-2024 :</i> Position: Boomi API - Senior EngineerWork
+                  Location:
                   <img src="{% static '/images/new.gif' %} " />
-
-                </li>
-                <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
-                    <img src="{% static '/images/new.gif' %} " />
-                </li>
-                <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
-                  <img src="{% static '/images/new.gif' %} " />
-                </li>
-                <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
-                  <img src="{% static '/images/new.gif' %} " />
-                </li>
-                <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
-                  <img src="{% static '/images/new.gif' %} " />
-                </li>
-                <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
-                  <img src="{% static '/images/new.gif' %} " />
-                </li>
-                <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
-                  <img src="{% static '/images/new.gif' %} " />
-                </li>
-                <li>
-                  <i>01-April-2023 :</i> Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Ut elit tellus...
-\                  <img src="{% static '/images/new.gif' %} " />
                 </li>
               </ul>
             </marquee>
@@ -347,33 +81,37 @@
                 <span class="event-img">
                   <img src="{% static '/images/campus_news_1.jfif' %} " />
                 </span>
-                <h2>There are many variations.</h2>
-                <h6>Sep.04.2012</h6>
+                <h2>Dotnet Developer [DX768]</h2>
+                <h6>21-jan-2024</h6>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry...
+                  DOTNET, ANGULAR Company Description Chaster IT Solutions Pvt.
+                  Ltd is an IT services, consulting and business solutions
+                  organization located in Bhopal.
                 </p>
               </li>
+
               <li>
                 <span class="event-img">
                   <img src="{% static '/images/campus_news_2.jfif' %} " />
                 </span>
-                <h2>There are many variations.</h2>
-                <h6>Sep.04.2012</h6>
+                <h2>Big Data Developer</h2>
+                <h6>Dec.12.2023</h6>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry...
+                  Design plugin development using C++Build Windows and Mac
+                  pluginsTrain / Mentor the juniorsDelegate work and assignments
+                  to juniorSkill
                 </p>
               </li>
               <li>
                 <span class="event-img">
                   <img src="{% static '/images/campus_news_3.jfif' %} " />
                 </span>
-                <h2>There are many variations.</h2>
-                <h6>Sep.04.2012</h6>
+                <h2>Senior Software Developer</h2>
+                <h6>28.No-2024</h6>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry...
+                  Design SDK developmentExperience with development both in
+                  Windows and MacGood knowledge of Visual Studio 2010+Good
+                  knowledge
                 </p>
               </li>
               <li>
@@ -468,7 +206,7 @@
     </div>
     <div class="main-section award" style="background: #f0f3fa">
       <div class="container">
-        <!-----College INFO SECTION----->
+        <!---College INFO SECTION---->
         <div class="event">
           <h2 class="heading">Our Chairman</h2>
           <div class="chairman">
@@ -477,31 +215,31 @@
                 <span class="campus-img">
                   <img src="{% static '/images/owner-1.jfif' %} " />
                 </span>
-                <h2>Dr. Jay sharma</h2>
-                <h4>Chairman, My College</h4>
-                <h5>2010-2023</h5>
+                <h2>Eng. Rachita Tiwari</h2>
+                <h4>Chairman, My Institute</h4>
+                <h5>2015-2023</h5>
               </li>
               <li>
                 <span class="campus-img">
                   <img src="{% static '/images/owner-2.jpg' %} " />
                 </span>
-                <h2>Dr. Jay sharma</h2>
+                <h2>Engg. Prashant Tiwari</h2>
                 <h4>Principal, My College</h4>
                 <h5>2020-2023</h5>
               </li>
             </ul>
           </div>
         </div>
-        <!-----College AWARD SECTION----->
+        <!---College AWARD SECTION---->
         <div class="event">
           <h2 class="heading">Placements</h2>
           <div>
             <img src="{% static '/images/placement.JPG' %} " />
           </div>
         </div>
-        <!-----College CERTIFICATE SECTION----->
+        <!-----College CERTIFICATE SECTION---->
         <div class="event">
-          <h2 class="heading">My College Certificate</h2>
+          <h2 class="heading">Placement</h2>
           <div>
             <img src="{% static '/images/placement2.JPG' %} " />
           </div>
@@ -509,7 +247,7 @@
       </div>
     </div>
 
-    <!-------PLACEMENT SECTION ------->
+    <!-------PLACEMENT SECTION ------>
     <div class="main-section">
       <div class="container">
         <h4 class="subhead">Top Placement</h4>
@@ -520,7 +258,7 @@
       </div>
     </div>
 
-    <!---FOOTER SECTION--->
+    <!---FOOTER SECTION---->
 
     <div class="footer">
       <div class="container">
