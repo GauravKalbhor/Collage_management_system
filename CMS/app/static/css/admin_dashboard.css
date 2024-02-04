@@ -5,7 +5,7 @@ section {
   background-color: rgb(201, 201, 201);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.4fr 0.3fr 0.5fr 1fr 1.7fr 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 0.3fr 0.1fr 0.3fr 1.7fr 1fr 1fr 1fr;
   grid-template-areas:
     "content2 nav nav nav nav"
     "content2 content3 content3 content3 content3"
