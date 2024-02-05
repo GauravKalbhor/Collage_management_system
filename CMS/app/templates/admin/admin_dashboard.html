@@ -55,15 +55,15 @@
         </button>
         <div class="dropdown-container">
           <a href="{% url 'student_add' %}">Student Add</a>
-          <a href="#">Student Update</a>
+          <a href="{% url 'showData' %}">Show All Data</a>
         </div>
         <button class="dropdown-btn">
           Teacher
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="#">Teacher Add</a>
-          <a href="#">Teacher Update</a>
+          <a href="{% url 'teacher_add' %}">Teacher Add</a>
+          <a href="{% url 'showTeacherData' %}">Show All Data</a>
         </div>
         <button class="dropdown-btn">
           Course
@@ -86,12 +86,12 @@
       </div>
 
       <div class="content4 content4-attendence">
-        <div>Students Attendence</div>
-        <h1>59%</h1>
+        <div>Total Student</div>
+        <h1>{{data.stu_count}}</h1>
       </div>
       <div class="content5 content4-attendence">
-        <div>Teacher Attendence</div>
-        <h1>59%</h1>
+        <div>Total Teacher</div>
+        <h1>{{data.teach_count}}</h1>
       </div>
       <div class="content6 content4-attendence">
         <div>Fees Budget</div>
