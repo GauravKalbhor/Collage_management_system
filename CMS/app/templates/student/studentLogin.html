@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{% static '/css/studentLogin.css' %}">
+</head>
+<body>
+    <form action="{% url 'studentLogin' %}" method="post" class='login-form'>
+        {% csrf_token %}
+        <div class="flex-row">
+          <label class="lf--label" for="user email">
+            <i class="fa fa-solid fa-user"></i>
+          </label>
+          <input id="username" class='lf--input' placeholder='User Email' name="email" type='text'>
+        </div>
+        <div class="flex-row">
+          <label class="lf--label" for="password">
+            <i class="fa fa-solid fa-lock"></i>
+          </label>
+          <input id="password" class='lf--input' placeholder='Password' name="password" type='password'>
+        </div>
+        <input class='lf--submit' type='submit' value='LOGIN'>
+      </form>
+      <a class='lf--forgot' href='#'>Forgot password?</a>
+</body>
+</html>

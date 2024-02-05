@@ -115,18 +115,13 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'adminDashbord' %}">
-                            <i class="bi bi-bar-chart"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <button class="dropdown-btn">
                             <i class="bi bi-people"></i> Students 
                             <i class="fa fa-caret-down"></i>
                           </button>
                         <div class="dropdown-container">
                             <a href="{% url 'student_add' %}">Student Add</a>
-                            <a href="{% url 'showData' %}">Show All Data</a>
+                            <a href="#">Show All Data</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -135,7 +130,7 @@
                             <i class="fa fa-caret-down"></i>
                           </button>
                         <div class="dropdown-container">
-                            <a href="{% url 'teacher_add' %}">Teacher Add</a>
+                            <a href="#">Teacher Add</a>
                             <a href="#">Show All Data</a>
                         </div>
                     </li>
@@ -213,8 +208,8 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total Student</span>
-                                        <span class="h3 font-bold mb-0">{{data.stu_count}}</span>
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Course</span>
+                                        <span class="h3 font-bold mb-0"></span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
@@ -222,10 +217,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                                 <div class="mt-2 mb-0 text-sm">
                                     <span class="badge badge-pill bg-soft-success text-success me-2">
-                                        <i class="bi bi-arrow-up me-1"></i> 30
+                                        <i class="bi bi-arrow-up me-1"></i>60%
                                     </span>
                                     <span class="text-nowrap text-xs text-muted">Progress</span>
                                 </div>
@@ -237,7 +231,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total Teachers</span>
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">New projects</span>
                                         <span class="h3 font-bold mb-0">21</span>
                                     </div>
                                     <div class="col-auto">
