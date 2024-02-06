@@ -7,11 +7,11 @@
     <table class="table table-hover table-nowrap">
       <thead class="thead-light">
         <tr>
-          <th scope="col">Stu_ID</th>
+          <th scope="col">Teach_ID</th>
+          <th scope="col">Job Title</th>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
           <th scope="col">Mobile</th>
-          <th scope="col">Department</th>
           <th scope="col">Course</th>
           <th></th>
         </tr>
@@ -19,14 +19,14 @@
       <tbody>
         {% for i in data.dataAll %}
         <tr>
-          <td>{{i.stu_ID}}</td>
-          <td>{{i.stu_Name}}</td>
-          <td>{{i.stu_Email}}</td>
-          <td>{{i.stu_Mobile}}</td>
-          <td>{{i.stu_Department}}</td>
-          <td>{{i.stu_Course}}</td>
+          <td>{{i.teach_ID}}</td>
+          <td>{{i.teach_jtitle}}</td>
+          <td>{{i.teach_Name}}</td>
+          <td>{{i.teach_Email}}</td>
+          <td>{{i.teach_Mobile}}</td>
+          <td>{{i.teach_Course}}</td>
           <td class="text-end">
-            <a href="{% url 'student_add' %}" class="btn btn-sm btn-neutral"
+            <a href="{% url 'teacher_add'  %}" class="btn btn-sm btn-neutral"
               >View</a
             >
             <button
