@@ -11,5 +11,5 @@ urlpatterns = [
     path("student_dashboard/",student_dashboard,name='student_dashboard'),
     # path("student/",student,name='student')
     # path("student_add/",student_add,name='student_add'),
-    # path("showTeacherData/",showTeacherData,name='showTeacherData'),
+    path("teacher_showData/",teacher_showData,name='teacher_showData'),
 ]
