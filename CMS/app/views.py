@@ -181,3 +181,6 @@ def teacher_showData(request):
             'dataAll':dataAll
             }    
     return render(request,'admin/teacher_showData.html',{'data':data})
+
+def student_view(request):
+    return render(request,"admin/student_view.html")
