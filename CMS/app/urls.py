@@ -8,6 +8,7 @@ urlpatterns = [
     path("student_add/",student_add,name='student_add'),
     path("showData/",student_showData,name='showData'),
     path("teacher_add/",teacher_add,name='teacher_add'),
+    path("student_dashboard/",student_dashboard,name='student_dashboard'),
     # path("student/",student,name='student')
     # path("student_add/",student_add,name='student_add'),
     # path("showTeacherData/",showTeacherData,name='showTeacherData'),

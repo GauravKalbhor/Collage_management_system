@@ -29,34 +29,6 @@ def adminLogin(request):
     else:    
         admin_form = Admin_form()
         return render(request,'admin/adminLogin.html',{'form':admin_form})
-    
-
-# def student_add (request):
-#     if request.method =="POST":
-#         stu_ID = request.POST['stuID']
-#         stu_Name=request.POST['fullname']
-#         fatherName=request.POST['fatherName']
-#         dob=request.POST['dob']
-#         email=request.POST['email']
-#         mobile=request.POST['mobile']
-#         address=request.POST['address']
-#         gender=request.POST['gender']
-#         cast=request.POST['cast']
-#         qualification=request.POST['qualification']
-#         department=request.POST['department']
-#         course=request.POST['course']
-
-#         Stu_Details.objects.create(stu_ID = stu_ID,
-#  stu_Name=stu_Name, stu_FatherName = fatherName,
-#  stu_DOB=dob, stu_Email=email, stu_Mobile= mobile,
-# stu_Address=address,stu_Gender=gender,stu_Cast=cast,
-# stu_Department=department, stu_Qualification=qualification,
-# stu_Course= course)
-#         return render(request, 'admin/student_add.html')
-#     else :
-#         return render(request, 'admin/student_add.html')
-
-
 
 def studentLogin(request):
     if request.method == "POST":
@@ -73,52 +45,8 @@ def studentLogin(request):
                 return render(request,'student/studenLogin.html',{'msg':message})
     return render(request,'student/studentLogin.html')
 
-
-# def student_add (request):
-#     if request.method =="POST":
-#         stu_ID = request.POST['stuID']
-#         stu_Name=request.POST['fullname']
-#         dob=request.POST['dob']
-#         email=request.POST['email']
-#         mobile=request.POST['mobile']
-#         gender=request.POST['gender']
-#         department=request.POST['department']
-#         course=request.POST['course']
-#         stu = Stu_FormDetails.objects.filter(stu_Email=email)
-#         if stu:
-#             msg="Student is already exist, Submit next student data"
-#             stu_count = Stu_FormDetails.objects.count()
-#             teach_count = Teach_FormDetails.objects.count()
-#             data ={
-#                 'stu_count':stu_count,
-#                 'teach_count':teach_count,
-#                 'msg':msg
-#             }
-#             return render(request, 'admin/student_add.html',{'data':data})
-#         else:
-#             Stu_FormDetails.objects.create(stu_ID = stu_ID,
-#  stu_Name=stu_Name,stu_DOB=dob, stu_Email=email, 
-#  stu_Mobile= mobile,stu_Gender=gender,
-# stu_Department=department,stu_Course= course)
-#             msg= "Teacher register"
-#             stu_count = Stu_FormDetails.objects.count()
-#             teach_count = Teach_FormDetails.objects.count()
-#             data ={
-#                 'stu_count':stu_count,
-#                 'teach_count':teach_count,
-#                 'msg':msg
-#             }
-#             return render(request, 'admin/student_add.html',{'data':data})
-#     else :
-#         stu_count = Stu_FormDetails.objects.count()
-#         teach_count = Teach_FormDetails.objects.count()
-#         data ={
-#                 'stu_count':stu_count,
-#                 'teach_count':teach_count,
-
-#             }
-#         return render(request, 'admin/student_add.html',{'data':data})
-
+def student_dashboard(request):
+    return render(request,'student/studenLogin.html')
 
 def student_add(request):
     if request.method =="POST":
