@@ -7,31 +7,88 @@
   <div class="container">
     <header>Registration</header>
     <h3>{{msg}}</h3>
-    <form action="{% url 'student_add' %}" method="post">
+    <form action="{% url 'teacher_add' %}" method="post">
       {% csrf_token %}
       <div class="form first">
         <div class="details personal">
           <span class="title">Personal Details</span>
           <div class="fields">
             <div class="input-field">
-              <label>Student ID</label>
-              <input type="text" placeholder="Enter Student ID" name="stuID" required />
+              <label>Teacher ID</label>
+              <input type="text" placeholder="Enter Teacher ID" name="teachID" required />
+            </div>
+            <div class="input-field">
+              <label>Job Title</label>
+              <input type="text" placeholder="Enter Job Title" name="jtitle" required />
             </div>
             <div class="input-field">
               <label>Full Name</label>
-              <input type="text" placeholder="Enter Student name" name="fullname" required />
+              <input type="text" placeholder="Enter Teacher name" name="fullname" required />
             </div>
             <div class="input-field">
               <label>Date of Birth</label>
               <input type="date" placeholder="Enter birth date" name="dob" required />
             </div>
             <div class="input-field">
+              <label>Date of Joining</label>
+              <input type="date" placeholder="Enter Fate Of Joining" name="dobjob" required />
+            </div>
+            <div class="input-field">
+              <label>Department</label>
+              <select required name="department">
+                <option disabled selected>Select Course</option>
+                <option>Front-End</option>
+                <option>Back-End</option>
+                <option>Full-Stack</option>
+                <option>Data Server</option>
+                <option>Cyber Squrity</option>
+              </select>
+            </div>
+            <div class="input-field input-box">
+              <label>Course</label>
+              <select required name="course">
+                <option disabled selected>Select Course</option>
+                <option>Python</option>
+                <option>C++</option>
+                <option>Django</option>
+                <option>HTML/CSS</option>
+                <option>JavaScript</option>
+                <option>ReactJs</option>
+                <option>MySql</option>
+                <option>AWS</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label>Father Name</label>
+              <input type="text" placeholder="Enter Father name" name="faname" required />
+            </div>
+            <div class="input-field">
               <label>Email</label>
-              <input type="text" placeholder="Enter Student email" name="email" required />
+              <input type="text" placeholder="Enter Teacher email" name="email" required />
             </div>
             <div class="input-field">
               <label>Mobile Number</label>
               <input type="number" placeholder="Enter mobile number" name="mobile" />
+            </div>
+            <div class="input-field">
+              <label>Emergency Mobile Number</label>
+              <input type="number" placeholder="Enter Emergency Mobile number" name="emmobile" />
+            </div>
+            <div class="input-field">
+              <label>Graduation</label>
+              <input type="text" placeholder="Enter Graduation" name="graduation" />
+            </div>
+            <div class="input-field">
+              <label>Post Graduation</label>
+              <input type="text" placeholder="Enter Post Graduation" name="postgraduation" />
+            </div>
+            <div class="input-field">
+              <label>Adhar Number</label>
+              <input type="number" placeholder="Enter mobile number" name="adhar" />
+            </div>
+            <div class="input-field">
+              <label>Address</label>
+              <input type="text" placeholder="Address" name="add" />
             </div>
             <div class="input-field input-box">
               <label>Gender</label>
@@ -40,26 +97,6 @@
                 <option>Male</option>
                 <option>Female</option>
                 <option>Others</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <label>Department</label>
-              <select required name="department">
-                <option disabled selected>Select Department</option>
-                <option>Front-End Developer</option>
-                <option>Back-End Developer</option>
-                <option>Data Base</option>
-                <option>Cyber Scurity</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <label>Course</label>
-              <select required name="course">
-                <option disabled selected>Select Course</option>
-                <option>Python</option>
-                <option>C++</option>
-                <option>React</option>
-                <option>JS</option>
               </select>
             </div>
           </div>
