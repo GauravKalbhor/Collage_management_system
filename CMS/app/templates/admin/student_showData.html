@@ -1,0 +1,61 @@
+{% extends "admin/admin_dashboard.html" %}
+{% load static %}
+
+{% block content %}
+<div class="card shadow border-0 mb-7">
+    <div class="card-header">
+        <h5 class="mb-0">Applications</h5>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-nowrap">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Stu_ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Course</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data.dataAll %}
+                <tr>
+                    <td>
+                        {{i.stu_ID}}
+                    </td>
+                    <td>
+                        {{i.stu_Name}}
+                    </td>
+                    <td>
+                        {{i.stu_Email}}
+                    </td>
+                    <td>
+                        {{i.stu_Mobile}}
+                    </td>
+                    <td>
+                        {{i.stu_Department}}
+                    </td>
+                    <td>
+                        {{i.stu_Course}}
+                    </td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer border-0 py-5">
+        <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+    </div>
+</div>
+{% endblock %}
