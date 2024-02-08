@@ -5,7 +5,7 @@ class AdminLogin(models.Model):
     adminID = models.CharField(max_length=50)
     adminPassword = models.CharField(max_length=50)
    
-class Stu_Details(models.Model):
+class Stu_FormDetails(models.Model):
     stu_ID = models.CharField(max_length=100)
     stu_Name = models.CharField(max_length=100)
     stu_FaName = models.CharField(max_length=100)
@@ -24,7 +24,7 @@ class Stu_Details(models.Model):
     stu_Course = models.CharField(max_length=50)
     stu_image = models.ImageField(upload_to='images/',null=True)
 
-class Teach_Details(models.Model):
+class Teach_FormDetails(models.Model):
     teach_ID = models.CharField(max_length=100)
     teach_jtitle = models.CharField(max_length=100)
     teach_Name = models.CharField(max_length=100)
