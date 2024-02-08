@@ -7,7 +7,7 @@
   <div class="container">
     <header>Registration</header>
     <h3>{{msg}}</h3>
-    <form action="{% url 'student_add' %}" method="post">
+    <form action="{% url 'student_add' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="form first">
         <div class="details personal">
@@ -96,11 +96,14 @@
             </div>
           </div>
         </div>
+        <label for="avatar">Choose a profile picture:</label>
+        <input type="file" id="avatar" name="image" accept="image/png, image/jpeg, image/*" class="file"/>
           <button class="nextBtn">
-            <span class="btnText">Next</span>
+            <span class="btnText">Save</span>
             <i class="uil uil-navigator"></i>
           </button>
         </div>
+        
       </div>
     </form>
 

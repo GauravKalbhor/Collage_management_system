@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import  HttpResponse
 from .models import *
 from .forms import *
@@ -72,6 +72,7 @@ def student_add(request):
         collage=request.POST['collage']
         department=request.POST['department']
         course=request.POST['course']
+        image = request.POST['image']
         stu = Stu_FormDetails.objects.filter(stu_Email=email)
         if stu:
             msg="Student is already exist, Submit next student data"
@@ -84,7 +85,7 @@ def student_add(request):
  stu_Name=stu_Name,stu_FaName=stu_faName,stu_DOB=dob,stu_DOBjob=dobjob,
 stu_Add=add,stu_Email=email,stu_Mobile=mobile,stu_EmMobile=emmobile,
 stu_Adhar=adhar,stu_Gender=gender,stu_Graduation=graduation,
-stu_Branch=branch,stu_Collage=collage,stu_Department=department,stu_Course= course)
+stu_Branch=branch,stu_Collage=collage,stu_Department=department,stu_Course= course,stu_image=image)
             msg= "Student register"
             stu_count = Stu_FormDetails.objects.count()
             teach_count = Teach_FormDetails.objects.count()
@@ -93,7 +94,7 @@ stu_Branch=branch,stu_Collage=collage,stu_Department=department,stu_Course= cour
                 'teach_count':teach_count,
                 'msg':msg
             }
-            return render(request, 'admin/student_add.html',{'data':data})
+            return render(request, 'admin/student_add.html',{'data':data}) ,redirect('image_list')
     else :
         stu_count = Stu_FormDetails.objects.count()
         teach_count = Teach_FormDetails.objects.count()
@@ -182,5 +183,90 @@ def teacher_showData(request):
             }    
     return render(request,'admin/teacher_showData.html',{'data':data})
 
-def student_view(request):
-    return render(request,"admin/student_view.html")
+def student_view(request, id):
+    view = Stu_FormDetails.objects.get(pk=id)
+    print(view)
+    stu_Id = view.stu_ID
+    stu_Name = view.stu_Name
+    stu_FaName = view.stu_FaName
+    stu_DOB = view.stu_DOB
+    stu_DOBjob = view.stu_DOBjob
+    stu_Add = view.stu_Add
+    stu_Email = view.stu_Email
+    stu_Mobile = view.stu_Mobile
+    stu_EmMobile = view.stu_EmMobile
+    stu_Adhar = view.stu_Adhar
+    stu_Gender=view.stu_Gender
+    stu_Graduation=view.stu_Graduation
+    stu_Branch=view.stu_Branch
+    stu_Collage=view.stu_Collage
+    stu_Department=view.stu_Department
+    stu_Course=view.stu_Course
+    stu_image = view.stu_image
+
+    student_allData={
+        'stu_Id':stu_Id,
+        'stu_Name' :stu_Name,
+        'stu_FaName' :stu_FaName,
+        'stu_DOB' :stu_DOB,
+        'stu_DOBjob' :stu_DOBjob,
+        'stu_Add' :stu_Add,
+        'stu_Email' :stu_Email,
+        'stu_Mobile' :stu_Mobile,
+        'stu_EmMobile' :stu_EmMobile,
+        'stu_Adhar' :stu_Adhar,
+        'stu_Gender':stu_Gender,
+        'stu_Graduation':stu_Graduation,
+        'stu_Branch':stu_Branch,
+        'stu_Collage':stu_Collage,
+        'stu_Department':stu_Department,
+        'stu_Course':stu_Course,
+        'stu_image' : stu_image
+    }
+    return render(request,"admin/student_view.html",{'student':student_allData})
+
+def student_delete(request,id):
+    delete_data = Stu_FormDetails.objects.get(pk=id)
+    print(delete_data)
+    delete_data.delete()
+    stu_Id = delete_data.stu_ID
+    stu_Name = delete_data.stu_Name
+    stu_FaName = delete_data.stu_FaName
+    stu_DOB = delete_data.stu_DOB
+    stu_DOBjob = delete_data.stu_DOBjob
+    stu_Add = delete_data.stu_Add
+    stu_Email = delete_data.stu_Email
+    stu_Mobile = delete_data.stu_Mobile
+    stu_EmMobile = delete_data.stu_EmMobile
+    stu_Adhar = delete_data.stu_Adhar
+    stu_Gender=delete_data.stu_Gender
+    stu_Graduation=delete_data.stu_Graduation
+    stu_Branch=delete_data.stu_Branch
+    stu_Collage=delete_data.stu_Collage
+    stu_Department=delete_data.stu_Department
+    stu_Course=delete_data.stu_Course
+    stu_image = delete_data.stu_image
+
+    student_deleteData={
+        'stu_Id':stu_Id,
+        'stu_Name' :stu_Name,
+        'stu_FaName' :stu_FaName,
+        'stu_DOB' :stu_DOB,
+        'stu_DOBjob' :stu_DOBjob,
+        'stu_Add' :stu_Add,
+        'stu_Email' :stu_Email,
+        'stu_Mobile' :stu_Mobile,
+        'stu_EmMobile' :stu_EmMobile,
+        'stu_Adhar' :stu_Adhar,
+        'stu_Gender':stu_Gender,
+        'stu_Graduation':stu_Graduation,
+        'stu_Branch':stu_Branch,
+        'stu_Collage':stu_Collage,
+        'stu_Department':stu_Department,
+        'stu_Course':stu_Course,
+        'stu_image' : stu_image
+    }
+    dataAll = Stu_FormDetails.objects.all()
+    messages = "Student data delete successfully"
+    return render(request,"admin/student_showData.html",{'student':student_deleteData,'data':dataAll,'msg':messages})
+
