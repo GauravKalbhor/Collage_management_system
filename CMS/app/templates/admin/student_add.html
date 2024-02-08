@@ -7,7 +7,7 @@
   <div class="container">
     <header>Registration</header>
     <h3>{{msg}}</h3>
-    <form action="{% url 'student_add' %}" method="post">
+    <form action="{% url 'student_add' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="form first">
         <div class="details personal">
@@ -22,16 +22,36 @@
               <input type="text" placeholder="Enter Student name" name="fullname" required />
             </div>
             <div class="input-field">
+              <label>Father Name</label>
+              <input type="text" placeholder="Enter Father name" name="fathername" required />
+            </div>
+            <div class="input-field">
               <label>Date of Birth</label>
               <input type="date" placeholder="Enter birth date" name="dob" required />
             </div>
             <div class="input-field">
+              <label>Date of Joining</label>
+              <input type="date" placeholder="Enter Date Of Joining" name="dobjob" required />
+            </div>
+            <div class="input-field">
+              <label>Address</label>
+              <input type="text" placeholder="Enter Address" name="add" required />
+            </div>
+            <div class="input-field">
               <label>Email</label>
-              <input type="text" placeholder="Enter Student email" name="email" required />
+              <input type="email" placeholder="Enter Student email" name="email" required />
             </div>
             <div class="input-field">
               <label>Mobile Number</label>
               <input type="number" placeholder="Enter mobile number" name="mobile" />
+            </div>
+            <div class="input-field">
+              <label>Emergency Mobile Number</label>
+              <input type="number" placeholder="Enter Emergency Mobile number" name="emmobile" />
+            </div>
+            <div class="input-field">
+              <label>Adhar Number</label>
+              <input type="number" placeholder="Enter Adhar number" name="adhar" />
             </div>
             <div class="input-field input-box">
               <label>Gender</label>
@@ -41,6 +61,18 @@
                 <option>Female</option>
                 <option>Others</option>
               </select>
+            </div>
+            <div class="input-field">
+              <label>Last Graduation</label>
+              <input type="text" placeholder="Enter Last Graduation" name="graduation" />
+            </div>
+            <div class="input-field">
+              <label>Branch Name</label>
+              <input type="text" placeholder="Enter mobile number" name="branch" />
+            </div>
+            <div class="input-field">
+              <label>Collage Name</label>
+              <input type="text" placeholder="Enter mobile number" name="collage" />
             </div>
             <div class="input-field">
               <label>Department</label>
@@ -64,11 +96,14 @@
             </div>
           </div>
         </div>
+        <label for="avatar">Choose a profile picture:</label>
+        <input type="file" id="avatar" name="image" accept="image/png, image/jpeg, image/*" class="file"/>
           <button class="nextBtn">
-            <span class="btnText">Next</span>
+            <span class="btnText">Save</span>
             <i class="uil uil-navigator"></i>
           </button>
         </div>
+        
       </div>
     </form>
 

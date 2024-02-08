@@ -9,6 +9,7 @@
   /* margin: 0 15px; */
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 .container header {
   position: relative;
@@ -29,9 +30,9 @@
 .container form {
   position: relative;
   margin-top: 16px;
-  min-height: 355px;
+  height: 500px;
   background-color: #fff;
-  overflow: hidden;
+  overflow: auto;
 }
 .container form .form {
   position: absolute;
