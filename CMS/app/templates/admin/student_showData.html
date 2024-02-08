@@ -7,6 +7,7 @@
     <table class="table table-hover table-nowrap">
       <thead class="thead-light">
         <tr>
+          <th scope="col">S.No</th>
           <th scope="col">Stu_ID</th>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
@@ -17,8 +18,10 @@
         </tr>
       </thead>
       <tbody>
+        <center > <h3> {{msg}} </h3></center>
         {% for i in data.dataAll %}
         <tr>
+          <td>{{i.id}}</td>
           <td>{{i.stu_ID}}</td>
           <td>{{i.stu_Name}}</td>
           <td>{{i.stu_Email}}</td>
@@ -26,14 +29,14 @@
           <td>{{i.stu_Department}}</td>
           <td>{{i.stu_Course}}</td>
           <td class="text-end">
-            <a href="{% url 'student_view' %}" class="btn btn-sm btn-neutral"
+            <a href="{% url 'student_view' i.id %}" class="btn btn-sm btn-neutral"
               >View</a
             >
             <button
               type="button"
-              class="btn btn-sm btn-square btn-neutral text-danger-hover"
-            >
-              <i class="bi bi-trash"></i>
+              class="btn btn-sm btn-square btn-neutral text-danger-hover">
+            <a href="{% url 'student_delete' i.id %}" class="btn btn-sm btn-neutral"><i class="bi bi-trash"></i></a>
+              
             </button>
           </td>
         </tr>
