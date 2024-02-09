@@ -270,3 +270,4 @@ def student_delete(request,id):
     messages = "Student data delete successfully"
     return render(request,"admin/student_showData.html",{'student':student_deleteData,'data':dataAll,'msg':messages})
 
+# nothing change try to check the error what happen
