@@ -31,13 +31,13 @@
               {% endif %}
 
               <div class="mt-3">
-                <h6>{{student.stu_Id | upper}}</h6>
+                <h6 class="text-info">{{student.stu_Id | upper}}</h6>
                 <h4>{{student.stu_Name | upper}}</h4>
-                <p class="text-secondary mb-1"></p>
+                <p class="text-dark mb-1"></p>
                 <p class="text-muted font-size-sm">
                   {{student.stu_Add}}
                 </p>
-                <p>{{student.stu_Mobile}} , {{student.stu_EmMobile}}</p>
+                <p class="text-dark">{{student.stu_Mobile}} , {{student.stu_EmMobile}}</p>
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
               <h6 class="mb-0">
                 Father's Name
               </h6>
-              <span class="text-secondary">{{student.stu_FaName}}</span>
+              <span class="text-dark">{{student.stu_FaName}}</span>
             </li>
             <li
               class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
@@ -58,7 +58,7 @@
               <h6 class="mb-0">
                 DOB
               </h6>
-              <span class="text-secondary">{{student.stu_DOB}}</span>
+              <span class="text-dark">{{student.stu_DOB}}</span>
             </li>
             <li
               class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
@@ -66,7 +66,7 @@
               <h6 class="mb-0">
                 Aadhar
               </h6>
-              <span class="text-secondary">{{student.stu_Adhar}}</span>
+              <span class="text-dark">{{student.stu_Adhar}}</span>
             </li>
             <li
               class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
@@ -74,7 +74,7 @@
               <h6 class="mb-0">
                 Email
               </h6>
-              <span class="text-secondary">{{student.stu_Email}}</span>
+              <span class="text-primary">{{student.stu_Email}}</span>
             </li>
             <li
               class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
@@ -82,7 +82,7 @@
               <h6 class="mb-0">
                 Gender
               </h6>
-              <span class="text-secondary">{{student.stu_Gender}}</span>
+              <span class="text-dark">{{student.stu_Gender}}</span>
             </li>
           </ul>
         </div>
@@ -94,7 +94,7 @@
               <div class="col-sm-3">
                 <h6 class="mb-0">Date Of Joining</h6>
               </div>
-              <div class="col-sm-9 text-secondary">
+              <div class="col-sm-9 text-dark">
                 {{student.stu_DOBjob}}
               </div>
             </div>
@@ -103,14 +103,14 @@
               <div class="col-sm-3">
                 <h6 class="mb-0">Course</h6>
               </div>
-              <div class="col-sm-9 text-secondary">{{student.stu_Course}}</div>
+              <div class="col-sm-9 text-dark">{{student.stu_Course}}</div>
             </div>
             <hr />
             <div class="row">
               <div class="col-sm-3">
                 <h6 class="mb-0">Last Qulification</h6>
               </div>
-              <div class="col-sm-9 text-secondary">{{student.stu_Graduation}}</div>
+              <div class="col-sm-9 text-dark">{{student.stu_Graduation}}</div>
             </div>
 
             <hr />
@@ -118,7 +118,7 @@
               <div class="col-sm-3">
                 <h6 class="mb-0">Branch</h6>
               </div>
-              <div class="col-sm-9 text-secondary">{{student.stu_Branch}}</div>
+              <div class="col-sm-9 text-dark">{{student.stu_Branch}}</div>
             </div>
 
             <hr />
@@ -126,7 +126,7 @@
               <div class="col-sm-3">
                 <h6 class="mb-0">Collage</h6>
               </div>
-              <div class="col-sm-9 text-secondary">{{student.stu_Collage}}</div>
+              <div class="col-sm-9 text-dark">{{student.stu_Collage}}</div>
             </div>
 
             <hr />
@@ -134,7 +134,15 @@
               <div class="col-sm-3">
                 <h6 class="mb-0">Department</h6>
               </div>
-              <div class="col-sm-9 text-secondary">{{student.stu_Department}}</div>
+              <div class="col-sm-9 text-dark">{{student.stu_Department}}</div>
+            </div>
+
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Fees</h6>
+              </div>
+              <div class="col-sm-9 text-dark">{{student.stu_Course_Fee}}</div>
             </div>
 
             <hr />
@@ -167,7 +175,7 @@
                   <div
                     class="progress-bar bg-primary"
                     role="progressbar"
-                    style="width: 80%"
+                    style="width: 89%"
                     aria-valuenow="80"
                     aria-valuemin="0"
                     aria-valuemax="100"
@@ -178,7 +186,7 @@
                   <div
                     class="progress-bar bg-primary"
                     role="progressbar"
-                    style="width: 72%"
+                    style="width: 85%"
                     aria-valuenow="72"
                     aria-valuemin="0"
                     aria-valuemax="100"
@@ -198,7 +206,7 @@
                   <div
                     class="progress-bar bg-primary"
                     role="progressbar"
-                    style="width: 80%"
+                    style="width: 70%"
                     aria-valuenow="80"
                     aria-valuemin="0"
                     aria-valuemax="100"
@@ -209,7 +217,7 @@
                   <div
                     class="progress-bar bg-primary"
                     role="progressbar"
-                    style="width: 72%"
+                    style="width: 82%"
                     aria-valuenow="72"
                     aria-valuemin="0"
                     aria-valuemax="100"

@@ -27,8 +27,9 @@ def adminLogin(request):
             'id' : 'admin@cybrom.co.in',
             'password' : 'admin@1234'
         }
+        user = "Prashant Sir"
         if (admin_data['id'] == ad_ID and admin_data['password'] == ad_pass):
-            return render(request,'admin/admin_dashboard.html')
+            return render(request,'admin/admin_dashboard.html',{'user':user})
         else:
             admin_form = Admin_form()
             return render(request,'admin/adminLogin.html',{'form':admin_form})
@@ -73,6 +74,7 @@ def student_add(request):
         collage=request.POST['collage']
         department=request.POST['department']
         course=request.POST['course']
+        course_fee=request.POST['fees']
         image = request.POST['image']
         stu = Stu_FormDetails.objects.filter(stu_Email=email)
         if stu:
@@ -86,7 +88,7 @@ def student_add(request):
  stu_Name=stu_Name,stu_FaName=stu_faName,stu_DOB=dob,stu_DOBjob=dobjob,
 stu_Add=add,stu_Email=email,stu_Mobile=mobile,stu_EmMobile=emmobile,
 stu_Adhar=adhar,stu_Gender=gender,stu_Graduation=graduation,
-stu_Branch=branch,stu_Collage=collage,stu_Department=department,stu_Course= course,stu_image=image)
+stu_Branch=branch,stu_Collage=collage,stu_Department=department,stu_Course= course,stu_Course_Fee=course_fee,stu_image=image)
             msg= "Student register"
             stu_count = Stu_FormDetails.objects.count()
             teach_count = Teach_FormDetails.objects.count()
@@ -95,7 +97,7 @@ stu_Branch=branch,stu_Collage=collage,stu_Department=department,stu_Course= cour
                 'teach_count':teach_count,
                 'msg':msg
             }
-            return render(request, 'admin/student_add.html',{'data':data}) ,redirect('image_list')
+            return render(request, 'admin/student_add.html',{'data':data}) 
     else :
         stu_count = Stu_FormDetails.objects.count()
         teach_count = Teach_FormDetails.objects.count()
@@ -204,6 +206,7 @@ def student_view(request, id):
     stu_Department=view.stu_Department
     stu_Course=view.stu_Course
     stu_image = view.stu_image
+    stu_Course_Fee = view.stu_Course_Fee
 
     student_allData={
         'stu_Id':stu_Id,
@@ -222,7 +225,8 @@ def student_view(request, id):
         'stu_Collage':stu_Collage,
         'stu_Department':stu_Department,
         'stu_Course':stu_Course,
-        'stu_image' : stu_image
+        'stu_image' : stu_image,
+        'stu_Course_Fee' : stu_Course_Fee
     }
     return render(request,"admin/student_view.html",{'student':student_allData})
 
@@ -247,6 +251,7 @@ def student_delete(request,id):
     stu_Department=delete_data.stu_Department
     stu_Course=delete_data.stu_Course
     stu_image = delete_data.stu_image
+    stu_Course_Fee = delete_data.stu_Course_Fee
 
     student_deleteData={
         'stu_Id':stu_Id,
@@ -265,7 +270,8 @@ def student_delete(request,id):
         'stu_Collage':stu_Collage,
         'stu_Department':stu_Department,
         'stu_Course':stu_Course,
-        'stu_image' : stu_image
+        'stu_image' : stu_image,
+        'stu_Course_Fee' : stu_Course_Fee
     }
     dataAll = Stu_FormDetails.objects.all()
     messages = "Student data delete successfully"
