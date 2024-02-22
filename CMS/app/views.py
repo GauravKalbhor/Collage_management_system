@@ -45,7 +45,8 @@ def studentLogin(request):
         if stu_data:
             data = Stu_FormDetails.objects.get(stu_Email = student_email)
             if (data.stu_ID == student_password):
-                return render(request,'student/student_dashboard.html')
+                name = data.stu_Name
+                return render(request,'student/student_dashboard.html',{'stu_name':name})
             else:
                 message = "Email or Password are not valid"
                 return render(request,'student/studenLogin.html',{'msg':message})

@@ -87,7 +87,8 @@
             </a>
             <hr />
             <img src="{% static '/images/stu_profile_image.png' %}" alt="user image" width="25%" style="border-radius: 50%; margin-left:5%">
-            <h4 style=" margin-left:5%">Welcome </h4>
+            {% comment %} <h4 style=" margin-left:5%">Welcome {{stu_name | default = "user"}}</h4> {% endcomment %}
+            <h4 style=" margin-left:5%">Welcome {{stu_name | upper}}</h4>
             <hr />
             <!-- User menu (mobile) -->
             <div class="navbar-user d-lg-none">
