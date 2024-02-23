@@ -10,13 +10,7 @@ def home(request):
     return render (request,'app/home.html')
 
 def adminDashbord(request):
-    stu_count = Stu_FormDetails.objects.count()
-    teach_count = Teach_FormDetails.objects.count()
-    data ={
-                'stu_count':stu_count,
-                'teach_count':teach_count,
-            }
-    return render (request,'admin/admin_dashboard.html',{'data':data})
+    return render (request,'admin/admin_dashboard.html')
 
 def adminLogin(request):
     if request.method == "POST":
@@ -108,7 +102,7 @@ stu_Branch=branch,stu_Collage=collage,stu_Department=department,stu_Course= cour
                 'teach_count':teach_count,
 
             }
-        return render (request,'admin/student_add.html',{'data':data})
+        return render (request,'admin/student_add.html')
     
 
 def student_showData(request):
