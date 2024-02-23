@@ -19,6 +19,7 @@
       <tbody>
         {% for i in data.dataAll %}
         <tr>
+          <td>{{i.id}}</td>
           <td>{{i.teach_ID}}</td>
           <td>{{i.teach_jtitle}}</td>
           <td>{{i.teach_Name}}</td>
@@ -26,7 +27,7 @@
           <td>{{i.teach_Mobile}}</td>
           <td>{{i.teach_Course}}</td>
           <td class="text-end">
-            <a href="{% url 'teacher_add'  %}" class="btn btn-sm btn-neutral"
+            <a href="{% url 'teacher_view' i.id %}" class="btn btn-sm btn-neutral"
               >View</a
             >
             <button

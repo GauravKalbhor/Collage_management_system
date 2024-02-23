@@ -13,6 +13,7 @@ class Admin_form(forms.ModelForm):
             raise forms.ValidationError('Enter a valid id')
         return adminID
     
+    adminPassword = forms.CharField(widget=forms.PasswordInput())
     def clean_adminPassword(self):
         adminPass = self.cleaned_data["adminPassword"]
         password = 'admin$1234'

@@ -1,0 +1,235 @@
+{% extends "admin/admin_dashboard.html" %} {% load static %} {% block content %}
+
+<div class="container">
+  <div class="main-body">
+    <!-- Breadcrumb -->
+    {% comment %}
+    <nav aria-label="breadcrumb" class="main-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+      </ol>
+    </nav>
+    {% endcomment %}
+    <!-- /Breadcrumb -->
+
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              {% if i in teacher %}
+                <img
+                src="{{student.stu_image.url}}"
+                alt="Student image"
+                class="rounded-circle"
+                width="150"
+              />
+              {% else %}
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+              {% endif %}
+
+              <div class="mt-3">
+                <h6 class="text-info">{{teacher.teach_Id | upper}}</h6>
+                <h4>{{teacher.teach_Name | upper}}</h4>
+                <p class="text-dark mb-1"></p>
+                <p class="text-muted font-size-sm">
+                  {{teacher.teach_Add}}
+                </p>
+                <p class="text-dark">{{teacher.teach_Mobile}} , {{teacher.teach_EmMobile}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-3">
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">
+                Father's Name
+              </h6>
+              <span class="text-dark">{{teacher.teach_FaName}}</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">
+                DOB
+              </h6>
+              <span class="text-dark">{{teacher.teach_DOB}}</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">
+                Aadhar
+              </h6>
+              <span class="text-dark">{{teacher.teach_Adhar}}</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">
+                Email
+              </h6>
+              <span class="text-primary">{{teacher.teach_Email}}</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">
+                Gender
+              </h6>
+              <span class="text-dark">{{teacher.teach_Gender}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Date Of Joining</h6>
+              </div>
+              <div class="col-sm-9 text-dark">
+                {{teacher.teach_DOBjob}}
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Course</h6>
+              </div>
+              <div class="col-sm-9 text-dark">{{teacher.teach_Course}}</div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Last Qulification</h6>
+              </div>
+              <div class="col-sm-9 text-dark">{{teacher.teach_Graduation}}</div>
+            </div>
+
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Post Graduation</h6>
+              </div>
+              <div class="col-sm-9 text-dark">{{teacher.teach_Postgraduation}}</div>
+            </div>
+
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Privious Company</h6>
+              </div>
+              <div class="col-sm-9 text-dark">{{teacher.teach_Collage}}</div>
+            </div>
+
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Department</h6>
+              </div>
+              <div class="col-sm-9 text-dark">{{teacher.teach_Department}}</div>
+            </div>
+
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Salary</h6>
+              </div>
+              <div class="col-sm-9 text-dark">{{teacher.teach_salary}}</div>
+            </div>
+
+            <hr />
+            
+            <div class="row">
+              <div class="col-sm-12">
+                <a
+                  class="btn btn-info"
+                  target="__blank"
+                  href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+
+                  <a
+                  class="btn btn-info"
+                  target="__blank"
+                  href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Save</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gutters-sm">
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="d-flex align-items-center mb-3">
+                  <i class="material-icons text-info mr-2">Student progress</i>
+                </h6>
+                <small>Course</small>
+                <div class="progress mb-3" style="height: 5px">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    style="width: 89%"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <small>Attendance</small>
+                <div class="progress mb-3" style="height: 5px">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    style="width: 85%"
+                    aria-valuenow="72"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="d-flex align-items-center mb-3">
+                  <i class="material-icons text-info mr-2">assignment</i>
+                </h6>
+                <small>Front-end</small>
+                <div class="progress mb-3" style="height: 5px">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    style="width: 70%"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <small>Back-end</small>
+                <div class="progress mb-3" style="height: 5px">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    style="width: 82%"
+                    aria-valuenow="72"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
