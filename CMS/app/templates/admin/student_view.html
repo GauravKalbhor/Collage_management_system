@@ -19,15 +19,16 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex flex-column align-items-center text-center">
+             
               {% if i in student %}
+                
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+              {% else %}
                 <img
                 src="{{student.stu_image.url}}"
                 alt="Student image"
-                class="rounded-circle"
-                width="150"
+                style="border-radius: 100%; width: 150px; height: 150px; border: 2px solid black;"
               />
-              {% else %}
-                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
               {% endif %}
 
               <div class="mt-3">

@@ -9,7 +9,7 @@ urlpatterns = [
     # student 
     path("studentLogin/",studentLogin,name='studentLogin'),
     path("student_add/",student_add,name='student_add'),
-    path("showData/",student_showData,name='showData'),
+    path("showData/",student_showData,name='student_showData'),
     path("student_dashboard/",student_dashboard,name='student_dashboard'),
     path("student_view/<int:id>/",student_view,name="student_view"),
     path("student_delete/<int:id>/",student_delete,name="student_delete"),
