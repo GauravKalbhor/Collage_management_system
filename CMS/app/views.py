@@ -35,18 +35,27 @@ def adminLogin(request):
 
 def studentLogin(request):
     if request.method == "POST":
-        student_email = request.POST['email']
-        student_password = request.POST['password']
+        email = request.POST['email']
+        password = request.POST['password']
 
-        stu_data = Stu_FormDetails.objects.filter(stu_Email = student_email)
+        stu_data = Stu_FormDetails.objects.filter(stu_Email = email)
+        teach_data = Teach_FormDetails.objects.filter(teach_Email = email)
         if stu_data:
-            data = Stu_FormDetails.objects.get(stu_Email = student_email)
-            if (data.stu_ID == student_password):
+            data = Stu_FormDetails.objects.get(stu_Email = email)
+            if (data.stu_ID == password):
                 name = data.stu_Name
                 return render(request,'student/student_dashboard.html',{'stu_name':name})
             else:
                 message = "Email or Password are not valid"
                 return render(request,'student/studentLogin.html',{'msg':message})
+        elif teach_data:
+                data = Teach_FormDetails.objects.get(teach_Email = email)
+                if (data.teach_ID == password):
+                    name = data.teach_Name
+                    return render(request,'teacher/teacher_dashboard.html',{'teach_name':name})
+                else:
+                    message = "Email or Password are not valid"
+                    return render(request,'student/studentLogin.html',{'msg':message})
     return render(request,'student/studentLogin.html')
 
 def student_dashboard(request):
@@ -71,7 +80,8 @@ def student_add(request):
         department=request.POST['department']
         course=request.POST['course']
         course_fee=request.POST['fees']
-        image = request.POST['image']
+        image = request.FILES.get('image')
+        print(image)
         stu = Stu_FormDetails.objects.filter(stu_Email=email)
         if stu:
             msg="Student is already exist, Submit next student data"

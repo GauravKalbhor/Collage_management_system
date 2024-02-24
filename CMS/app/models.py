@@ -23,7 +23,7 @@ class Stu_FormDetails(models.Model):
     stu_Department = models.CharField(max_length=50)
     stu_Course = models.CharField(max_length=50)
     stu_Course_Fee = models.IntegerField(null=True)
-    stu_image = models.ImageField(upload_to='images/',null=True)
+    stu_image = models.ImageField(upload_to='uploads/images/')
 
 class Teach_FormDetails(models.Model):
     teach_ID = models.CharField(max_length=100)

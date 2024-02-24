@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="{% static '/css/home.css' %}" />
+    <style>
+      *{
+        scroll-behavior: smooth;
+      }
+      body::-webkit-scrollbar{
+        display: block;
+        width: 10px;
+        border-radius: 50px;
+        background-color: transparent;
+      }
+      body::-webkit-scrollbar-thumb{
+        background-color: #0055a4;
+        width: 5px;
+        height: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="header">
@@ -26,7 +42,7 @@
       <!----MENU SECTION---->
       <nav>
         <a href="#">Home</a>
-        <a href="#">About us</a>
+        <a href="#about">About us</a>
         <a href="#">Events</a>
         <a href="#">Gallery</a>
         <a href="#">Notice Board</a>
@@ -180,7 +196,7 @@
     </div>
 
     <!-----ABOUT US SECTION------>
-    <div class="main-section">
+    <div class="main-section" id="about">
       <div class="container about-us">
         <div>
           <h4 class="subhead">Our Institue</h4>
