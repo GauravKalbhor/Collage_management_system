@@ -18,4 +18,5 @@ urlpatterns = [
     path("teacher_add/",teacher_add,name='teacher_add'),
     path("teacher_showData/",teacher_showData,name='teacher_showData'),
     path("teacher_view/<int:id>/",teacher_view,name='teacher_view'),
+    path("teach_deleteData/<int:id>/",teach_deleteData,name='teach_deleteData'),
 ]

@@ -29,9 +29,6 @@
       .header {
         background: #0055a4;
         padding: 6px;
-        position: fixed;
-        top: 0;
-        left: 0;
       }
 
       .header b {

@@ -25,8 +25,9 @@ def adminLogin(request):
         if (admin_data['id'] == ad_ID and admin_data['password'] == ad_pass):
             return render(request,'admin/admin_dashboard.html',{'user':user})
         else:
+            message = "Email Or Password not exist"
             admin_form = Admin_form()
-            return render(request,'admin/adminLogin.html',{'form':admin_form})
+            return render(request,'admin/adminLogin.html',{'form':admin_form,'msg':message})
     else:    
         admin_form = Admin_form()
         return render(request,'admin/adminLogin.html',{'form':admin_form})
@@ -244,6 +245,8 @@ def teacher_add (request):
         adhar=request.POST['adhar']
         add=request.POST['add']
         gender=request.POST['gender']
+        salary=request.POST['salary']
+        image = request.FILES.get('image')
         tech = Teach_FormDetails.objects.filter(teach_Email=email)
         if tech:
             msg="Teacher is already exist, Submit next Teacher data"
@@ -256,7 +259,7 @@ def teacher_add (request):
 teach_Name=fullname,teach_DOB=dob,teach_DOBjob=dobjob,teach_Department=department,
 teach_Course= course,teach_FaName=faname,teach_Email=email, teach_Mobile= mobile,
 teach_EmMobile=emmobile,teach_Graduation=graduation,teach_Postgraduation=postgraduation,
-teach_Adhar=adhar,teach_Add=add,teach_Gender=gender)
+teach_Adhar=adhar,teach_Add=add,teach_Gender=gender,teach_salary=salary,teach_image=image)
             msg= "Teacher register"
             stu_count = Stu_FormDetails.objects.count()
             teach_count = Teach_FormDetails.objects.count()
@@ -307,7 +310,8 @@ def teacher_view(request,id):
     teach_Adhar = view.teach_Adhar
     teach_Add = view.teach_Add
     teach_Gender = view.teach_Gender
-
+    teach_salary = view.teach_salary
+    teach_image = view.teach_image
     teach_allData = {
         'teach_ID' : teach_ID,
         'teach_jtitle' : teach_jtitle,
@@ -325,12 +329,14 @@ def teacher_view(request,id):
         'teach_Adhar' : teach_Adhar,
         'teach_Add' : teach_Add,
         'teach_Gender' : teach_Gender,
+        'teach_salary' : teach_salary,
+        'teach_image' : teach_image
     }
     return render(request,'admin/teacher_view.html',{'teacher':teach_allData})
 
 def teach_deleteData(request,id):
     delete_data = Teach_FormDetails.objects.get(pk=id)
-
+    delete_data.delete()
     teach_ID = delete_data.teach_ID
     teach_jtitle = delete_data.teach_jtitle
     teach_Name = delete_data.teach_Name
@@ -366,4 +372,6 @@ def teach_deleteData(request,id):
         'teach_Add' : teach_Add,
         'teach_Gender' : teach_Gender,
     }
-    return render(request,'admin/teacher_view.html',{'teacher_delete':teach_deleteData})
+    dataAll = Teach_FormDetails.objects.all()
+    messages = "Student data delete successfully"
+    return render(request,'admin/teacher_showData.html',{'teacher_delete':teach_deleteData,'data':dataAll,'msg':messages})

@@ -27,14 +27,13 @@
           <td>{{i.teach_Mobile}}</td>
           <td>{{i.teach_Course}}</td>
           <td class="text-end">
-            <a href="{% url 'teacher_view' i.id %}" class="btn btn-sm btn-neutral"
+            <a href="{% url 'teacher_view' i.id %}" class="btn btn-sm btn-neutral bg-success"
               >View</a
             >
             <button
               type="button"
               class="btn btn-sm btn-square btn-neutral text-danger-hover"
-            >
-              <i class="bi bi-trash"></i>
+            ><a href="{% url 'teach_deleteData' i.id %}" class="btn btn-sm btn-neutral bg-danger"><i class="bi bi-trash"></i></a>
             </button>
           </td>
         </tr>

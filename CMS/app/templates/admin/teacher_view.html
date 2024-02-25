@@ -20,18 +20,16 @@
           <div class="card-body">
             <div class="d-flex flex-column align-items-center text-center">
               {% if i in teacher %}
-                <img
-                src="{{student.stu_image.url}}"
-                alt="Student image"
-                class="rounded-circle"
-                width="150"
-              />
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
               {% else %}
-                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+              <img
+              src="{{teacher.teach_image.url}}"
+              alt="Teacher image"
+              style="border-radius: 100%; width: 150px; height: 150px; border: 2px solid black;"
+            />
               {% endif %}
-
               <div class="mt-3">
-                <h6 class="text-info">{{teacher.teach_Id | upper}}</h6>
+                <h6 class="text-info">{{teacher.teach_ID | upper}}</h6>
                 <h4>{{teacher.teach_Name | upper}}</h4>
                 <p class="text-dark mb-1"></p>
                 <p class="text-muted font-size-sm">

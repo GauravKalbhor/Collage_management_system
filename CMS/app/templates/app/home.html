@@ -4,7 +4,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" href="{% static '/images/favicon.png' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Cybrom Technology Pvt. Ltd.</title>
     <link rel="stylesheet" href="{% static '/css/home.css' %}" />
     <style>
       *{
@@ -43,10 +45,10 @@
       <nav>
         <a href="#">Home</a>
         <a href="#about">About us</a>
-        <a href="#">Events</a>
-        <a href="#">Gallery</a>
-        <a href="#">Notice Board</a>
-        <a href="#">Contact us</a>
+        <a href="#event">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#notice">Notice Board</a>
+        <a href="#contact">Contact us</a>
         <a href="{% url 'adminLogin' %}">Admin Login</a>
         <a href="{% url 'studentLogin' %}">Login</a>
       </nav>
@@ -60,7 +62,7 @@
     <div class="main-section" style="background: #f0f3fa">
       <div class="container">
         <!----CAMPUS NEWS SECTION---->
-        <div class="event">
+        <div class="event" id="event">
           <h2 class="heading">Recent Event</h2>
           <div>
             <marquee direction="up" scrollamount="7" style="height: 340px">
@@ -83,14 +85,14 @@
                 <li>
                   <i>6-Feb-2024 :</i> Position: Boomi API - Senior EngineerWork
                   Location:
-                  <img src="{% static '/images/new.gif' %} " />
+                  <img src="{% static '/images/new.gif' %} " alt=""/>
                 </li>
               </ul>
             </marquee>
           </div>
         </div>
         <!-----CAMPUS NEWS SECTION----->
-        <div class="event campus-news">
+        <div class="event campus-news" id="notice">
           <h2 class="heading">Campus News</h2>
           <div>
             <ul>
@@ -218,11 +220,11 @@
           </p>
           <a href="#">Read More</a>
         </div>
-        <img src="{% static '/images/About_us.avif' %} " />
+        <img src="{% static '/images/About_us.avif' %} " alt=""/>
       </div>
     </div>
     <div class="main-section award" style="background: #f0f3fa">
-      <div class="container">
+      <div class="container" id="gallery">
         <!---College INFO SECTION---->
         <div class="event">
           <h2 class="heading">Our Chairman</h2>
@@ -230,7 +232,7 @@
             <ul>
               <li>
                 <span class="campus-img">
-                  <img src="{% static '/images/owner-1.jfif' %} " />
+                  <img src="{% static '/images/owner-1.jfif' %} " alt=""/>
                 </span>
                 <h2>Eng. Rachita Tiwari</h2>
                 <h4>Chairman, My Institute</h4>
@@ -238,7 +240,7 @@
               </li>
               <li>
                 <span class="campus-img">
-                  <img src="{% static '/images/owner-2.jpg' %} " />
+                  <img src="{% static '/images/owner-2.jpg' %} " alt=""/>
                 </span>
                 <h2>Engg. Prashant Tiwari</h2>
                 <h4>Principal, My College</h4>
@@ -251,14 +253,14 @@
         <div class="event">
           <h2 class="heading">Placements</h2>
           <div>
-            <img src="{% static '/images/placement.JPG' %} " />
+            <img src="{% static '/images/placement.JPG' %} " alt=""/>
           </div>
         </div>
         <!-----College CERTIFICATE SECTION---->
         <div class="event">
           <h2 class="heading">Placement</h2>
           <div>
-            <img src="{% static '/images/placement2.JPG' %} " />
+            <img src="{% static '/images/placement2.JPG' %} " alt=""/>
           </div>
         </div>
       </div>
@@ -270,17 +272,17 @@
         <h4 class="subhead">Top Placement</h4>
         <h2 class="heading">Our Partner Company</h2>
         <marquee class="placement" direction="left" scrollamount="10">
-          <img src="{% static '/images/Company.JPG' %} " />
+          <img src="{% static '/images/Company.JPG' %} " alt=""/>
         </marquee>
       </div>
     </div>
 
     <!---FOOTER SECTION---->
 
-    <div class="footer">
+    <div class="footer" id="contact">
       <div class="container">
         <div class="footer-sect">
-          <img class="footer-logo" src="{% static '/images/logo.png' %} " />
+          <img class="footer-logo" src="{% static '/images/logo.png' %} " alt=""/>
         </div>
         <div class="footer-sect">
           <address>
@@ -296,17 +298,18 @@
           </address>
         </div>
         <div class="footer-sect">
-          <img src="{% static '/images/icon-tel.png' %} " /> +91 97559 96968 (MP nagar),
-          <img src="{% static '/images/icon-tel.png' %} " /> +91 9111666430 (Indrapuri)
+          <img src="{% static '/images/icon-tel.png' %} " alt=""/> +91 97559 96968 (MP nagar),
+          <img src="{% static '/images/icon-tel.png' %} " alt=""/> +91 9111666430 (Indrapuri)
         </div>
         <div class="footer-sect">
-          <img src="{% static '/images/icon-mail.png' %} " /> info@cybrom.com
+          <img src="{% static '/images/icon-mail.png' %} " alt=""/> info@cybrom.com
         </div>
         <div class="footer-sect">
-          <img src="{% static '/images/icon-fb.png' %} " />
-          <img src="{% static '/images/icon-tw.png' %} " />
-          <img src="{% static '/images/icon-in.png' %} " />
-          <img src="{% static '/images/icon-li.png' %} " />
+          <a href="https://www.facebook.com/cybromtechnologybhopal"><i class="bi bi-facebook" style="font-size: 2rem; color: cornflowerblue;"></i></a>
+          <a href="https://www.instagram.com/cybromtechnology/?igsh=azZ5N21xdWoxcWl5"><i class="bi bi-instagram" style="font-size: 2rem; color:black; background: linear-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); border-radius: 10px;"></i></a>
+          <a href="https://www.linkedin.com/company/cybrom-technology/"><i class="bi bi-linkedin" style="font-size: 2rem; color: cornflowerblue;"></i></a>
+          <a href="#"><i class="bi bi-twitter" style="font-size: 2rem; color: cornflowerblue;"></i></a>
+          
         </div>
       </div>
     </div>

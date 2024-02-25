@@ -42,3 +42,5 @@ class Teach_FormDetails(models.Model):
     teach_Adhar = models.CharField(max_length=12)
     teach_Add = models.CharField(max_length=100)
     teach_Gender = models.CharField(max_length=10)
+    teach_salary = models.IntegerField(null=True)
+    teach_image = models.ImageField(upload_to='uploads/images/',null=True)
